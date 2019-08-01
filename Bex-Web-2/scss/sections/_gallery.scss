@@ -1,0 +1,39 @@
+/* =============
+    Gallery
+============= */
+#gallery {
+    ul {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-areas: "gallery-1" "gallery-2" "gallery-3";
+        padding: 0 16px 95px;
+        @include md {
+            grid-template-areas: "gallery-2 gallery-2 gallery-3 gallery-3" ". gallery-1 gallery-1 .";
+        }
+        @include lg {
+            grid-template-areas: "gallery-1 gallery-2 gallery-3";
+            grid-template-columns: (3, 1fr);
+        }
+
+        li {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 308px;
+        }
+
+        li:first-child {
+            background-image: url("../img/gallery-1.jpg");
+            grid-area: gallery-1;
+        }
+
+        li:nth-child(2) {
+            background-image: url("../img/gallery-2.jpg");
+            grid-area: gallery-2;
+        }
+
+        li:last-child {
+            background-image: url("../img/gallery-3.png");
+            grid-area: gallery-3;
+        }
+    }
+}
